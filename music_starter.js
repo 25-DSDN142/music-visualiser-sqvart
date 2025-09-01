@@ -9,8 +9,15 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
    let bar_spacing = height / 10;
    let bar_height = width / 12;
    let bar_pos_x = width / 2;
- 
+
 // changes 
+
+
+   //background 
+
+   fill(50, 50, 240);
+   rect(width / 2, height / 2, width, height);
+
    // vocal bar is red
    fill(200, 0, 0);
    rect(bar_pos_x, height / 2 + 1 * bar_spacing, 4 * vocal, bar_height);
@@ -24,10 +31,12 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
    text("drums", bar_pos_x, height / 2 + 2 * bar_spacing + 8);
  
    // bass bar is blue
-   fill(50, 50, 240);
-   rect(bar_pos_x, height / 2 + 3 * bar_spacing, 4 * bass, bar_height);
-   fill(0);
-   text("bass", bar_pos_x, height / 2 + 3 * bar_spacing + 8);
+   noFill()
+   stroke(256)
+   circle(width / 2, height / 2, bass * 2, bass * 2);
+   textAlign(CENTER);
+   fill(0)
+   text("bass", width / 2, height / 2);
  
    // other bar is white
    fill(200, 200, 200);
