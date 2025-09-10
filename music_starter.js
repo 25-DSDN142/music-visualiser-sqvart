@@ -17,29 +17,28 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
    let drumWidth  =map(drum, 0, 100, 0, width / 2);
    let bassWidth  =map(bass, 0, 100, 0, width / 2);
    let otherWidth =map(other, 0, 100, 0, width / 2);
-   let otherRed =map(other, 0, 100, 30, 0)
+   let otherRed =map(other, 0, 100, 30, 0);
 
    let lineY = height - 30;
    let angle = 0;
    let r = 150;
    
+// changes 
 
-
-//center line
-   strokeWeight(1)
-   stroke(0, 100, 0)
+   //center line for reference
+   strokeWeight(1);
+   stroke(0, 100, 0);
    line(width / 2, 0, width / 2, height);
 
-// changes 
+
    //other equaliser
-   strokeCap(SQUARE)
-   strokeWeight(10)
-   stroke(otherRed, 70, 100)
+   strokeCap(SQUARE);
+   strokeWeight(10);
+   stroke(otherRed, 70, 100);
    let otherMap =map(other, 0, 100, 0, 40)
    let lengthOfLine = 300;
    let LineStart = 10;
    let lineEnd = width - 10;
-
 
    for(var i =1; i <= otherMap; i++){
       var lineStep = i*10;
@@ -49,6 +48,8 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
 
    // vocal bar is red
    noFill();
+   stroke(0, 100, 0)
+   strokeWeight(1)
    circle(bar_pos_x, height / 2 + 1 * bar_spacing, vocalWidth, bar_height);
    fill(0);
    text("vocals", bar_pos_x, height / 2 + 1 * bar_spacing + 8);
